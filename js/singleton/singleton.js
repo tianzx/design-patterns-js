@@ -10,7 +10,7 @@ var mysinleton = {
 }
 
 /***
- * 
+ * encapsulation like java get、set
  */
 var mysinleton2 = function() {
 	var privateVariable = 'something private';
