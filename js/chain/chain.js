@@ -26,14 +26,48 @@ function $() {
 				this.elements.push(element);
 		}
 	}
+	
+	_$.prototype = {
+		each :function(fn) {
+			for (var i=0,len=this.elements.length;i<len;i++) {
+				fn.call(this,this.elements[i]);
+			}
+			return this;
+		},
+		setStyle :function(prop,val) {
+			this.each(function(el) {
+				el.style[prop] = val;
+			})
+			return this;
+		},
+		show: function() {
+			var that = this;
+			this.each(function(el){
+				this.setStyle('display','block')
+			});
+			return this;
+		},
+		addEvent: function(type,fn){
+			var add = function(el) {
+				if (window.addEventListener) {
+					el.addEventListener(type, fn, false);
+				}
+				else if (window.attachEvent) {
+					el.attachEvent('on'+type, fn);
+				}
+			};
+			this.each(function(el) {
+				add(el);
+			});
+			return this;
+		}
+	};
 	window.$ = function() {
 		return new _$(arguments);
 	};
-	
-	_$.prototype = {
-		each :function() {
-			
-		},
-		
-	}
 }())
+$(window).addEvent('load', function() {
+	$('test1', 'test2').show().setStyle('background', 'red').addEvent('click', function(e) {
+		$(this).setStyle('background', 'green');
+	});
+});
