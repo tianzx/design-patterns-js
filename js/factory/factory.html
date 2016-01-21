@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>factory test</title>
+	</head>
+	<style>
+		div{
+			width:100px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<body>
+		<div id="div1">
+			123
+		</div>
+	</body>
+	<script src="rssReader.js"></script>
+	<script>
+		var div = document.getElementById('div1');
+		var listDisplay = new ListDisplay("ul",div);
+		listDisplay.append("tianzx");
+		listDisplay.clear();
+	</script>
+</html>
