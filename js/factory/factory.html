@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>factory test</title>
@@ -11,16 +12,26 @@
 			background: red;
 		}
 	</style>
+
 	<body>
-		<div id="div1">
-			123
+		<div id="feed-readers">
 		</div>
 	</body>
 	<script src="rssReader.js"></script>
 	<script>
-		var div = document.getElementById('div1');
-		var listDisplay = new ListDisplay("ul",div);
-		listDisplay.append("tianzx");
-		listDisplay.clear();
+//		var div = document.getElementById('div1');
+//		var listDisplay = new ListDisplay("ul", div);
+//		listDisplay.append("tianzx");
+//		listDisplay.clear();
+		var div =document.getElementById('feed-readers');
+		var conf = {
+			id: '酷壳Cooshell',
+			feedUrl: 'http://coolshell.cn/feed',
+//			updateInterval： '60',
+			parent: div
+		}
+//		var feedReader = new FeedReader('',XhrManager.createXhrHandler(),conf);
+		feedReader.fetchFeed();
 	</script>
+
 </html>
