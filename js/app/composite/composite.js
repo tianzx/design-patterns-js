@@ -1,4 +1,3 @@
-<script src="test.js"></script>
 //var Composite = new Interface('Composite',['add','remove','getChild']);
 //var GalleryItem =new Interface('GalleryItem',['hide','show']);
 
@@ -65,7 +64,7 @@ GalleryImage.prototype = {
 
 var topGallery = new DynamicGallery('top-gallery');
 
-topGallery.add((new GalleryImage('ipad.png')));
+topGallery.add((new GalleryImage('.ipad.png')));
 var vacationPhotos =  new DynamicGallery('vacation-photos');
 for(var i=0;i<30;i++){
 	vacationPhotos.add(new GalleryImage('ipad.png'))

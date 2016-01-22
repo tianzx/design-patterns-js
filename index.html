@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div {
+			width: 100px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+
+	<body>
+		<div id='div'>
+			昨夜西风凋碧树， 独上高楼， 望尽天涯路。
+		</div>
+	</body>
+	<script src="js/lib/require.js"></script>
+	<script>
+		requirejs(['js/lib/jquery.js'], function() {
+			var div = $("#div").html();
+			console.log(div);
+			console.log("sc");
+		})
+	</script>
+
+</html>
