@@ -1,0 +1,3 @@
+/**
+ * solve the modules communicate
+ */
