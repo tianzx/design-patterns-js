@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>animated show</title>
+	</head>
+
+	<body>
+		<div style="position:absolute;background:blue" id="div">我是 div</div>
+	</body>
+	<script src="tween.js"></script>
+	<script>
+		var Animate = function(dom) {
+			this.dom = dom; // 进行运动的 dom 节点
+			this.startTime = 0; // 动画开始时间
+			this.startPos = 0; // 动画开始时， dom 节点的位置，即 dom 的初始位置
+			this.endPos = 0; // 动画结束时， dom 节点的位置，即 dom 的目标位置
+			this.propertyName = null; // dom 节点需要被改变的 css 属性名
+			this.easing = null; // 缓动算法
+			this.duration = null; // 动画持续时间
+		};
+		
+	</script>
+
+</html>
