@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>File Upload</title>
+	</head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.6.2/jquery.mockjax.js"></script>
+	<script type="text/javascript" src="jqUpload.js"></script>
+
+	<body>
+		<button id="file">File Upload</button>
+		<div id="mock">simulate ajax upload</div>
+	</body>
+	<script>
+			$("#file").on('click',function(){
+				console.log("success");
+				var opts = {
+					url: "/restful/file"
+				}
+				$.upload(opts);
+			})
+		$.mockjax({
+			url: "/restful/file",
+			responseText: {
+				status: "success",
+				mock: "Are you a mock turtle?"
+			}
+		});
+//		$.getJSON("/restful/file", function(response) {
+//			if (response.status == "success") {
+//				$("#mock").html("Your mock is: " + response.mock);
+//			} else {
+//				$("#mock").html("Things do not look good, no mock was told");
+//			}
+//		});
+	</script>
+
+</html>
